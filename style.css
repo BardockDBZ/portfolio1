@@ -1,49 +1,122 @@
+:root {
+  --primary: #4f46e5;
+  --background: linear-gradient(120deg, #0b0c2a, #3a0ca3, #7209b7, #f72585);
+  --text: #1f2937;
+  --accent: #6366f1;
+  --white: #ffff;
+  --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  --radius: 12px;
+}
+
 body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    margin: 0;
-    padding: 0;
-    background: #f4f4f4;
-    color: #333;
-  }
-  
-  header {
-    background: #333;
-    color: #fff;
-    padding: 2rem;
-    text-align: center;
-  }
-  
-  nav {
-    background: #444;
-    text-align: center;
-    padding: 1rem;
-  }
-  
+  background: linear-gradient(120deg, #0b0c2a, #3a0ca3, #7209b7, #f72585);
+  background-size: 400% 400%;
+  animation: galaxy 15s ease infinite;
+  color: #ffa600;
+  font: 1em sans-serif;
+}
+
+@keyframes galaxy {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+
+
+/* === HEADER === */
+header {
+  background: var(--background);
+  color: var(--white);
+  padding: 3rem 1rem;
+  text-align: center;
+  box-shadow: var(--shadow);
+}
+header h1 {
+  margin: 0;
+  font-size: 2.5rem;
+}
+header p {
+  font-size: 1.2rem;
+  opacity: 0.9;
+}
+
+/* === NAVIGATION === */
+nav {
+  background: var(--accent);
+  padding: 1rem;
+  text-align: center;
+}
+nav a {
+  color: var(--white);
+  margin: 0 1.5rem;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+nav a:hover {
+  color: #e0e7ff;
+}
+
+/* === SECTIONS === */
+section {
+  padding: 3rem 1rem;
+  max-width: 900px;
+  margin: auto;
+}
+section h2 {
+  color: var(--primary);
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+/* === PROJECT CARDS === */
+.project {
+  background: var(--white);
+  padding: 1.5rem;
+  margin: 1.5rem 0;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.project:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+}
+.project h3 {
+  margin-top: 0;
+  color: var(--primary);
+}
+
+/* === FOOTER === */
+footer {
+  background: var(--primary);
+  color: var(--white);
+  text-align: center;
+  padding: 1.5rem;
+  margin-top: 3rem;
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 768px) {
   nav a {
-    color: #fff;
-    margin: 0 1rem;
-    text-decoration: none;
+    display: block;
+    margin: 0.5rem 0;
   }
-  
+
+  header h1 {
+    font-size: 2rem;
+  }
+
   section {
-    padding: 2rem;
-    max-width: 800px;
-    margin: auto;
+    padding: 2rem 1rem;
   }
-  
-  .project {
-    background: #fff;
-    padding: 1rem;
-    margin: 1rem 0;
-    border-radius: 8px;
-    box-shadow: 0 0 5px rgba(0,0,0,0.1);
-  }
-  
-  footer {
-    background: #333;
-    color: #fff;
-    text-align: center;
-    padding: 1rem;
-  }
-  
+}
+.card {
+  background: linear-gradient(145deg, #3a0ca3, #7209b7);
+  padding: 2rem;
+  border-radius: 12px;
+  color: black;
+  box-shadow: 0 0 25px rgba(114, 9, 183, 0.5);
+}
+
